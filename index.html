@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .header-bar {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .header-bar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+        .header-bar .logo span {
+            color: #f4b400;
+        }
+        .header-bar .search-bar {
+            flex: 1;
+            margin: 0 20px;
+        }
+        .header-bar .search-bar input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .header-bar .actions {
+            display: flex;
+            align-items: center;
+        }
+        .header-bar .actions a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #000;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        .header-bar .actions a img {
+            margin-right: 5px;
+        }
+        .nav-menu {
+            background: #f9f9f9;
+            padding: 10px 20px;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            border-bottom: 1px solid #ddd;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 20px;
+            font-size: 0.9rem;
+        }
+        .header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header h1 {
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .header .animated-text {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            font-size: 1.5rem;
+            color: #f4b400;
+            animation: slideText 10s linear infinite;
+        }
+        @keyframes slideText {
+            0% { transform: translateY(-50%) translateX(100%); }
+            50% { transform: translateY(-50%) translateX(0); }
+            100% { transform: translateY(-50%) translateX(-100%); }
+        }
+        .product {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .product h2 {
+            color: #333;
+            margin: 15px 0;
+        }
+        .product p {
+            color: #666;
+            font-size: 14px;
+        }
+        .buy-now {
+            background: #28a745;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .buy-now:hover {
+            background: #218838;
+        }
+        .reviews-section {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .reviews-header h2 {
+            margin: 0;
+            color: #333;
+        }
+        .rating-summary {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .rating-summary .score {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .rating-summary .stars {
+            color: #f4b400;
+            font-size: 1.5rem;
+        }
+        .rating-breakdown {
+            margin: 20px 0;
+        }
+        .rating-breakdown div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .rating-breakdown span {
+            flex: 1;
+        }
+        .rating-bar {
+            flex: 4;
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            margin-left: 10px;
+            overflow: hidden;
+        }
+        .rating-bar-fill {
+            height: 100%;
+            background: #28a745;
+        }
+        .review {
+            border-top: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .review img {
+            max-width: 100px;
+            border-radius: 5px;
+        }
+        .review h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        .review p {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-bar">
+        <div class="logo">allo<span>allo</span></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Find your dream phone">
+        </div>
+        <div class="actions">
+            <a href="#">
+                <img src="https://via.placeholder.com/20" alt="Help"> Assistance
+            </a>
+            <a href="#">
+                <img src="https://via.placeholder.com/20" alt="Account"> Account
+            </a>
+            <a href="#">
+                <img src="https://via.placeholder.com/20" alt="Cart"> 0
+            </a>
+        </div>
+    </div>
+    <div class="nav-menu">
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">Refurbished Phone</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">iPhone 13</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">iPhone 12</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">iPhone 11</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">iPhone 12 mini</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">AirPods Pro</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">iPhone X</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">iPad 9</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">Galaxy S21</a>
+        <a href="#">Galaxy S22</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">Galaxy S21+</a>
+        <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g">iPad mini 5</a>
+    </div>
+
+    <div class="header">
+        <h1></h1>
+        <div class="animated-text">ටික ටික ගෙවන්න ඔයත් අදම මුලික ගෙවීමක් නැතුව පොන් එකක් ගෙදරටම ගෙන්න ගන්න</div>
+    </div>
+    <div class="container">
+
+        
+        <!-- Product 1 -->
+        <div class="product">
+            
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone16prohero-202409?wid=680&hei=528&fmt=p-jpg&qlt=95&.v=1725567335931" alt="Product 1">
+            <h2>
+                
+                iPhone 12 Pro</h2>
+            <p>මුලීක ගෙවිම් නැත. මාසිකව 2500 × අවුරුදු 3ක් ගෙවන්න අදම Order කර ගෙදරටම ගෙන්න ගන්න</p>
+            <br>
+            <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g" class="buy-now">Buy Now</a>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone14-202209?wid=680&hei=528&fmt=p-jpg&qlt=95&.v=1693086290654" alt="Product 2">
+            <h2>iPhone 14</h2>
+            <p>මුලීක ගෙවිම් නැත. මාසිකව 3500 × අවුරුදු 3ක් ගෙවන්න අදම Order කර ගෙදරටම ගෙන්න ගන්න</p>
+            <br>
+            <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g" class="buy-now">Buy Now</a>
+        </div>
+
+        <!-- Product 3 -->
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="https://cdn.alloallo.media/catalog/product/samsung/galaxy-s/galaxy-s21/galaxy-s21-phantom-gray.webp" alt="Product 3">
+            <h2>Galaxy S21 5G 128GB Phantom Gray</h2>
+            <p>මුලීක ගෙවිම් 5000/=. මාසිකව 1500 × අවුරුදු 2ක් ගෙවන්න අදම Order කර ගෙදරටම ගෙන්න ගන්න</p>
+            <br>
+            <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g" class="buy-now">Buy Now</a>
+            
+        </div>
+
+        <!-- Product 4 -->
+        <!-- Product 4 -->
+        <div class="product">
+            <img src="https://cdn.alloallo.media/catalog/product/samsung/galaxy-s/galaxy-s22/galaxy-s22-phantom-white.jpg">
+            <h2>Galaxy S22 5G 256GB Phantom White</h2>
+            <p>මුලීක ගෙවිම් 3000/=. මාසිකව 2500 × අවුරුදු 2ක් ගෙවන්න අදම Order කර ගෙදරටම ගෙන්න ගන්න</p>
+            <br>
+            <a href="https://vdbaa.com/fullpage.php?section=General&pub=317353&ga=g" class="buy-now">Buy Now</a>
+            
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <div class="reviews-header">
+                <h2>Customer Reviews and Ratings</h2>
+                <p>9200+ reviews collected over the past 12 months.</p>
+            </div>
+            <div class="rating-summary">
+                <div class="score">4.3</div>
+                <div class="stars">★★★★☆</div>
+                <p>All reviews are from verified purchases.</p>
+            </div>
+            <div class="rating-breakdown">
+                <div>
+                    <span>5 stars</span>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" style="width: 76%;"></div>
+                    </div>
+                    <span>76%</span>
+                </div>
+                <div>
+                    <span>4 stars</span>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" style="width: 13%;"></div>
+                    </div>
+                    <span>13%</span>
+                </div>
+                <div>
+                    <span>3 stars</span>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" style="width: 8%;"></div>
+                    </div>
+                    <span>8%</span>
+                </div>
+                <div>
+                    <span>2 stars</span>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" style="width: 3%;"></div>
+                    </div>
+                    <span>3%</span>
+                </div>
+                <div>
+                    <span>1 star</span>
+                    <div class="rating-bar">
+                        <div class="rating-bar-fill" style="width: 1%;"></div>
+                    </div>
+                    <span>1%</span>
+                </div>
+            </div>
+            <div class="review">
+                <h3>ho***99</h3>
+                <p><strong>4/5</strong> - The delivery was within the shipping time, the product is as specified, the battery is in good condition and the price is reasonable. More than satisfied.</p>
+                <img src="https://cdn.alloallo.media/review/user/ynZJWedRvBzyA71VhXbDtH8LaOwiuK.jpeg" alt="Review Image">
+            </div>
+            <div class="review">
+                <h3>kh***y_</h3>
+                <p><strong>3/5</strong> - The product is okay, but the battery life could have been better.</p>
+                <img src="https://cdn.alloallo.media/review/user/i0fq4TNZHFpuE6GnALX2Q9YPrjdygw.jpeg" alt="Review Image">
+            </div>
+        </div>
+    </div>
+        
+
+
+
+    </div>
+</body>
+</html>
